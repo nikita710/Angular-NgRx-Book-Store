@@ -1,0 +1,34 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Vardi Wala Gunda",
+      "author": "Ved Prakash Sharma",
+      "cost": 30
+    },
+    {
+      "id": 2,
+      "title": "The Da Vinci Code",
+      "author": "Dan Brown",
+      "cost": 500
+    },
+    {
+      "id": 3,
+      "title": "Harry Potter and the Sorcerer’s Stone",
+      "author": "J.K. Rowling",
+      "cost": 400
+    },
+    {
+      "id": 4,
+      "author": "Bill O'Reilly",
+      "title": "KILLING THE LEGENDS",
+      "cost": 140
+    },
+    {
+      "id": 5,
+      "author": "Kelly Ripa",
+      "title": "LIVE WIRE",
+      "cost": 215
+    }
+  ]
+}

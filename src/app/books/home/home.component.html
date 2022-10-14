@@ -1,0 +1,61 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col col-md4 offset-md-4 mb-4">
+      <a routerLink="/add" class="btn btn-dark">Add New Book</a>
+    </div>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let book of books$ | async">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ book.title }}</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{ book.author }}</li>
+            <li class="list-group-item">{{ book.cost }}</li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <a [routerLink]="['/edit', book.id]" class="btn btn-dark">Edit</a> | 
+          <button class="btn btn-dark" (click)="openDeleteModal(book.id)">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="deleteModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          Delete Confirmation
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">Are you sure to delete Book?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-danger" (click)="confirmDelete()">
+          Confirm Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
